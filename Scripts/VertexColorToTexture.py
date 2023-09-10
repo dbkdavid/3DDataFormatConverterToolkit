@@ -226,12 +226,18 @@ title.pack(pady=20, padx=10)
 # define widget width
 widget_width=500
 
-# create open file button and file path text field
+# create open file button
 button_open = ctk.CTkButton(master=frame, text="Open", command=selectfile, anchor="w", width=widget_width)
 button_open.pack(pady=5, padx=10)
 
+# create file path text field
 entry_file = ctk.CTkEntry(master=frame, placeholder_text="File Path", width=widget_width)
 entry_file.pack(pady=5, padx=10)
+
+# create resolution option menu
+option_menu = ctk.CTkOptionMenu(master=frame, values=["512", "1024", "2048", "4096"])
+option_menu.pack(pady=5, padx=10)
+option_menu.set("Resolution")
 
 # create convert button
 button_convert = ctk.CTkButton(master=frame, text="Convert", command=processfiles)
